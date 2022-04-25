@@ -1,0 +1,12 @@
+### Create a subscription.
+POST http://localhost:7071/api/customers/12345/subscriptions
+
+{
+    "level": "Basic",
+}
+
+### Get subscriptions.
+GET http://localhost:7071/api/customers/12345/subscriptions
+
+### Soft delete a subscription.
+DELETE http://localhost:7071/api/customers/12345/subscriptions/3d098073-e5a4-45de-8780-4d8400d324cc
