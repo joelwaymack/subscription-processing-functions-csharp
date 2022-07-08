@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Company.Function.Models;
 
-public class Subscription
+public class Payment
 {
     [JsonProperty("id")]
     public Guid Id { get; set; }
@@ -11,15 +11,12 @@ public class Subscription
     [JsonProperty("customerId")]
     public string CustomerId { get; set; }
 
-    [JsonProperty("level")]
-    public SubscriptionLevel Level { get; set; }
+    [JsonProperty("subscriptionId")]
+    public Guid SubscriptionId { get; set; }
+
+    [JsonProperty("amount")]
+    public decimal Amount { get; set; }
 
     [JsonProperty("createdTimestamp")]
     public DateTime CreatedTimestamp { get; set; }
-
-    [JsonProperty("isActive")]
-    public bool IsActive { get; set; } = true;
-    
-    [JsonProperty("paymentDay")]
-    public int? PaymentDay { get; set; }
 }

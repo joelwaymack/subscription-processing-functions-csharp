@@ -30,11 +30,11 @@ public static class SubscriptionApiHandler
         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
         var subscription = JsonConvert.DeserializeObject<Subscription>(requestBody);
         subscription.Id = Guid.NewGuid();
-        subscription.customerId = customerId;
+        subscription.CustomerId = customerId;
         subscription.CreatedTimestamp = DateTime.UtcNow;
         await subscriptionsOutput.AddAsync(subscription);
 
-        log.LogInformation($"Subscription {subscription.Id} created for customer {subscription.customerId}");
+        log.LogInformation($"Subscription {subscription.Id} created for customer {subscription.CustomerId}");
 
         return new OkObjectResult(subscription);
     }

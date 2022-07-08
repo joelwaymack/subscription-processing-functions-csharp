@@ -1,12 +1,31 @@
-### Create a subscription.
+### Create a basic subscription.
 POST http://localhost:7071/api/customers/12345/subscriptions
 
 {
     "level": "Basic",
 }
 
+### Create a premium subscription.
+POST http://localhost:7071/api/customers/12345/subscriptions
+
+{
+    "level": "Premium",
+}
+
+
 ### Get subscriptions.
 GET http://localhost:7071/api/customers/12345/subscriptions
 
 ### Soft delete a subscription.
 DELETE http://localhost:7071/api/customers/12345/subscriptions/3d098073-e5a4-45de-8780-4d8400d324cc
+
+### Test the daily subscription retrieval timer.
+POST http://localhost:7071/admin/functions/ProcessDailySubscriptions
+Content-Type: application/json
+
+{
+    "input": "test"
+}
+
+### Get payments.
+GET http://localhost:7071/api/customers/12345/payments
